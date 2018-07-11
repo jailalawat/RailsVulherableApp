@@ -1,0 +1,31 @@
+To Start the application please follow the following instruction
+
+1) Install the ruby version ruby-2.2.0
+2) Install the bundler  'gem install bundler'
+3) bundle install
+4) Set the database configuration files config/database.yml
+5) Run
+	rake db:drop && rake db:create && rake db:migrate && rake db:seed
+6) Start the Rails server with rails s.
+
+
+This is very simple rails article post application, where anyone can post a article without the registration(for demo purpose).
+
+Here I am using the 2 model
+1) User
+2) Article
+
+
+Article is a public model where anyone can post a article and search it with its content text.
+
+
+- 1 piece of code that contains the vulnerability
+
+XSS: Cross-Site Scripting Attack:-
+
+There is 1 type of vulherability here
+a) Visit http://localhost:3000/articles/1
+
+Since we are write the code below
+<%== @article.text %>
+Which is render object text as a string. In this case user able to see the embeded html code.
